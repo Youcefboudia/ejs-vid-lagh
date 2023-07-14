@@ -1,0 +1,557 @@
+
+:root
+{
+    --btn-color :#383a3d;
+    --btn-font-color :#f2f2f2;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-weight: 600; */
+    color: #343434;
+    scroll-behavior: smooth;
+}
+
+a{
+    color: black;
+}
+.df
+{
+    display: flex;
+}
+.db
+{
+    display: block;
+}
+
+.jus-c
+{
+    justify-content: center;
+}
+.al-c{
+    align-items: center;
+}
+.f-d-c{
+    flex-direction: column;
+}
+.f-d-r
+{
+    flex-direction: row;
+}
+
+.jus-b
+{
+    justify-content: space-between;
+}
+.jus-a{
+    justify-content: space-around;
+}
+.jus-e
+{
+    justify-content: space-evenly;
+}
+.p-a{
+    position: absolute;
+}
+.p-r{
+    position:relative ;
+}
+.p-f{
+    position: fixed;
+}
+.cntr{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.cntr-l75{
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%,-50%);
+}
+.top-25{
+    top:25%;
+}
+.top--25{
+    top:-25%;
+}
+.top--75{
+    top:-75%;
+}
+.top-0{
+    top:0%;
+}
+.left-0{
+    left:0%;
+}
+
+.CardSn {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    min-width: 200px;
+    height:auto;
+    min-height: 400px;
+    margin: 20px;
+    overflow: hidden;
+  }
+
+  .CardSn-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .CardSn-image img {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  .CardSn-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    height: 200px;
+  }
+  
+  .CardSn:hover .CardSn-overlay {
+    opacity: 1;
+  }
+  
+  .CardSn-date {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .CardSn-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .CardSn-content {
+    padding: 20px;
+    background-color: #ffffff;
+    height:100% ;
+    min-height: 200px;
+    
+  }
+  
+  .CardSn-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .CardSn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  .CardSn-link:hover {
+    background-color: #000;
+    color: #fff;
+  }
+.btn-c{
+    background: var(--btn-color);
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    padding: 8px 16px;
+    color: var(--btn-font-color);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    width: auto;
+    font-weight: 500;
+    border: 1px solid #96969644;
+    text-align: center;
+    letter-spacing: .5px;
+}
+.btn-c:hover{
+    background-color: #343434;
+    box-shadow: 0 0 2px #ffffff;
+    border: 1px solid #c9c7c744;
+
+}
+.btn-a
+{
+    background: transparent;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    padding: 8px 8px;
+    color: #3c3c3c;
+    text-align: center;
+    font-size: 18px;
+    width: auto;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .3s;
+    border-bottom: 1px solid #dcdcdc00;
+}
+.txt-f{
+    padding: 0px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--btn-color);
+    outline: none;
+    height: 40px;
+}
+.f-wrap{
+    flex-wrap: wrap;
+}
+.full-h
+{
+    height: 100%;
+}
+.full-w
+{
+    width:  calc(100% - 50px);
+}
+.al-content-c
+{
+    align-content:center ;
+}
+
+/* ------------------------------------- */
+.cntr-t{
+   position: absolute;
+   top: 50%;
+   transform: translate(0%,-50%);
+}
+.cntr-l{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+ }
+.carousel-control-prev{
+    background-color: #343434;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 3rem;
+}
+.carousel-control-next{
+    background: #343434;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 3rem;
+}
+
+.mak-card{
+    background-color: #fff;
+    width: 18rem;
+    padding: 20px;
+    left: 100px;
+    border: 1px solid #ccc;
+}
+.mak-card a{
+    color: #0e65d0;
+}
+.hold{
+    height: 400px;
+    
+}
+
+
+
+/* 
+
+cccccccccccccccccccc
+*/
+
+@keyframes slide {
+    from{
+        transform: translateY(-20%);
+    }
+    to{
+        transform: translateY(0); 
+    }
+    
+}
+@keyframes slide-left {
+    from{
+        transform: translateY(-50%);
+    }
+    to{
+        transform: translateY(0); 
+    }
+    
+}
+
+
+
+header.masthead {
+
+    
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: #fff;
+    background-image: url('./Capture.PNG');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    animation: slide 2s  cubic-bezier(0.25, 0.1, 0.05, 1.01)  ;
+
+
+  }
+header.masthead .masthead-subheading {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-bottom: 25px;
+    
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  header.masthead .masthead-heading {
+    font-size: 3.25rem;
+    animation: slide-left 2s ;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  .slide{
+    animation: slide-left 3;
+  }
+  @media (min-width: 768px) {
+    header.masthead {
+      padding-top: 17rem;
+      padding-bottom: 12.5rem;
+    }
+    header.masthead .masthead-subheading {
+      font-size: 2.25rem;
+      font-style: italic;
+      line-height: 2.25rem;
+      margin-bottom: 2rem;
+    }
+    header.masthead .masthead-heading {
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 4.5rem;
+      margin-bottom: 4rem;
+    }
+    }
+    .bg-gra{background-image: url('./signin-bg.webp');
+height: 100%;
+}
+.img-nav{
+    width: 50px;
+    padding: 2px;
+}
+.img-profile{
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    margin: auto;
+    object-position: center;
+overflow: hidden;
+
+}
+.img-back
+{
+    background-size: cover;
+}
+
+.font-l-12{
+font-size: 12px;
+}
+.font-l-48{
+font-size: 48px;
+}
+.font-l-24{
+font-size: 24px;
+}
+.font-l-36{
+font-size: 36px;
+}
+
+.image-container {
+    width: 300px; 
+    height: 300px; 
+    overflow: hidden;
+    
+  }
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 5px;
+    border-radius: 50%;
+    
+  }
+  
+.image-details {
+    width: 600px; 
+    height: 400px; 
+    overflow: hidden;
+    
+  }
+.image-details img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    
+  }
+
+
+.image-event {
+    width: 100%; 
+    height: auto; 
+    max-height:500px ;
+    overflow: hidden;
+  }
+
+.image-event img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding: 5px;
+  }
+
+  .image-post {
+    width: 100%; 
+    height: 500px; 
+
+    overflow: hidden;
+  }
+.image-post img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding: 5px;
+  }
+
+
+  
+.Card-Well {
+  position: relative;
+  display: inline-block;
+  width: 450px;
+  min-width: 200px;
+  height:auto;
+  min-height: 400px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.Card-Well-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.Card-Well-image img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.Card-Well-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  height: 200px;
+}
+
+.Card-Well:hover .Card-Well-overlay {
+  opacity: 1;
+}
+
+.Card-Well-date {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.Card-Well-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.Card-Well-content {
+  padding: 20px;
+  background-color: #ffffff;
+  height:100% ;
+  min-height: 200px;
+  
+}
+
+.Card-Well-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.Card-Well-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.Card-Well-link:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+
+
+.label-hd{
+  border-radius: 30px;
+  
+}
+.head-txt{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10%;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
+  border-bottom: 4px solid #fff;
+  padding-bottom: 10px;
+}
+.head-txt h1{
+  text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 100px;
+}
