@@ -17,7 +17,7 @@ function Details(id,res,req){
                         const imageSrc = `data:image/svg+xml;base64,${base64Image}`;
                         
                         if(req.session.user)
-                        res.render('Cars_details',{ data:data[0],auth:req.session.user,conn:true,imageSrc})
+                        res.render('Cars_details',{ data:data[0],auth:data2[0],conn:true,imageSrc})
                         else
                         res.render('Cars_details',{ data:data[0],auth:data2[0],conn:false,imageSrc})
                     }else{
