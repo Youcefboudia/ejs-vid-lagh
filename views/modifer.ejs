@@ -1,0 +1,43 @@
+<%- include('./parts/head.ejs') %>
+<% if(data){ %>
+<%- include('./parts/navBar.ejs') %>
+<body>
+    <div class="container  mt-2 mb-5 card p-3">
+        <form action="/modiferUser" method="post">
+        <div class=" card-body">
+            <h1 class="m-2">Modifer account :</h1>
+                <label for="" class="m-2">Username</label>
+                <input type="text" name="username" id="" required class="form-control" value="<%= data.username  %>">
+                <label for="" class="m-2">password</label>
+                <input type="text" name="password" id="" required class="form-control" value="<%= data.password  %>">
+        </div>
+        <div class="card-body">
+
+            <h1 class="m-2">Modifer page web :</h1>
+            <form action="/modifer" method="post" enctype="multipart/form-data">
+                <label for="" class="m-2">Un nom :</label>
+                <input type="text" name="nom" id="" required class="form-control" value="<%= data.nom  %>">
+                <label for="" class="m-2">Telephone 1:</label>
+                <input type="number" name="tele1" id="" required class="form-control" value="<%= parseInt(data.tele1) %>">
+                <label for="" class="m-2">Telephone 2:</label>
+                <input type="number" name="tele2" id="" required class="form-control" value="<%= parseInt(data.tele1) %>">
+                <label for="" class="m-2">Agent de service :</label>
+                <input type="text" name="agent" id="" required class="form-control" value="<%= data.agent  %> ">
+                
+                <label for="" class="m-2">Service :</label>
+                <input type="text" name="service" id="" required class="form-control" value="<%= data.service  %> ">
+                
+                <label for="" class="m-2">Location :</label>
+                <input type="text" name="location" id="" required class="form-control" value="<%= data.location  %> ">
+                
+                <label for="" class="m-2">Email :</label>
+                <input type="text" name="email" id="" required class="form-control" value="<%= data.email  %> ">
+            </div>
+            <input type="submit"  class="btn btn-outline-danger m-2" value="Modifer">
+            
+        </form>
+    </div>
+    <%- include('./parts/fouter.ejs') %>
+    <% } %>
+</body>
+</html>

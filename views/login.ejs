@@ -1,0 +1,44 @@
+<%- include('./parts/head.ejs'); %>
+<body>
+        <div class=" p-a cntr shadow  border" style="width: 500px; ">
+            <% if(Connect) {%>
+                <div class="alert alert-danger text-center mt-0 mb-2  " role="alert">
+                    Connection with problem
+                </div>
+                <% } %>
+            <img src="Img/insigne.png" class="w-100" alt="">
+            <form action="/login" method="POST" class="form-group d-flex al-c f-d-c jus-c p-5">
+                <h1>Connectez-vous ici!
+                </h1>
+                
+                <input type="text" name="user" id="" class="form-control rounded-5  m-3 p-2" placeholder="Username..." class="border-radius:0px;" required>
+                <div class="input-group has-validation m-3">
+                    <input type="password" name="pass" class="form-control rounded-5 p-2 " id="validationCustomUsername" placeholder="Password"  required>
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                    <span class="btn text-center" id="inputGroupPrepend" onclick="show()">Show</span>
+                  </div>
+                <button class="btn btn-dark btn-lg w-100 rounded-5">Connexion </button>
+                <hr class="bg-dark w-100">
+            </form>
+        </div>
+
+        <script>
+            var input_pass= document.querySelector('#validationCustomUsername')
+            var btn= document.querySelector('#inputGroupPrepend')
+            var bool = false;
+            function show(){
+                if(bool){
+                    input_pass.type = "password";
+                    bool = false;
+                    btn.textContent = 'Show'
+                }else{
+                    input_pass.type = "text";
+                    bool = true;
+                    btn.textContent = 'Hide'
+                }
+            }
+        </script>
+</body>
+</html>

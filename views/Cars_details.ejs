@@ -1,0 +1,95 @@
+<%- include('./parts/head.ejs'); %>
+<% if(data) {%>
+<%- include('./parts/navbar_d.ejs') %>
+<body>
+        
+    <div class="" style="position: relative;">
+        <img src="/Img/sidbanner.png" alt="" class="w-100" style="background-size: cover;">
+        <h1 class="head-txt  text-white  ">Bienvenue à la station de service pôle vidange  </h1>
+    </div>
+    <div class="container">
+        <p class="fs-1 text-dark mt-3 ">Historique de cette voiture <%= data.car %></p>
+    </div>
+    <div class="container">
+        
+        <div class="card d-flex al-c p-2 w-100" style="border: none;">
+           
+            <div class="card-body d-flex  f-d-c align-items-baseline w-100" style="background-color: #f2f2f2;">
+                <div class="d-flex f-d-c align-items-baseline m-3" >
+                    <label for="#" class="label-hd  pe-4 ps-4 p-1 bg-white "> Nos contact </label>
+                    <div class="d-flex mt-3 jus-e " >
+                        <img src="/Img/telephone-fill.svg" alt="" class="me-4" style="width:20px ;">
+                        Telephone N° 1 : <%= auth.tele1 %>
+                    </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <img src="/Img/telephone-fill.svg" alt="" class="me-4" style="width:20px ;">
+                        Telephone N° 2 :  <%= auth.tele2 %>
+                    </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <img src="/Img/envelope-fill.svg" alt="" class="me-4" style="width:20px ;">
+                       Email : <%= auth.email %>
+                    </div>
+                </div>
+                <div class="d-flex f-d-c align-items-baseline m-3"  >
+                    <label for="#" class="label-hd  pe-4 ps-4 p-1 bg-white "> Nos Adresse </label>
+                    <div class="d-flex mt-3 jus-e " >
+                       Location de cette station : <p class="text-danger ms-2"><%= auth.location %></p>
+                    </div>
+                    
+                </div>
+                <div class="d-flex f-d-c align-items-baseline m-3" >
+                    <label for="#" class="label-hd  pe-4 ps-4 p-1 bg-white "> Détails de la voiture                    </label>
+                    <div class="d-flex mt-3 jus-e " >
+                        <img src="/Img/car-front-fill.svg" alt="" class="me-4" style="width:20px ;"> <span> Voiture : <%=data.car  %></span>
+                    </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <img src="/Img/key-fill.svg" alt="" class="me-4" style="width:20px ;"> <span> Matricule : <%=data.matricule  %></span>
+                    </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <img src="/Img/telephone-fill.svg" alt="" class="me-4" style="width:20px ;"> <span>Numéro de téléphone du propriétaire : <%=data.teleC%></span>
+                    </div>
+                </div>
+                
+                <div class="d-flex f-d-c align-items-baseline m-3" >
+                    <label for="#" class="label-hd  pe-4 ps-4 p-1 bg-white "> Service                    </label>
+                    <div class="d-flex mt-3 jus-e " >
+                        <span>SAISIE PAR :</span><span class="text-danger ms-2"><%=data.saisie %></span>
+                    </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <span> Type d'huile:</span><span class="text-danger ms-2"><%=data.oil  %></span>
+                   </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <span>Agent de service :</span><span class="text-danger ms-2"><%=data.agent  %></span>
+                   </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <span>Services :</span><span class="text-danger ms-2"><%=data.service  %></span>
+                   </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <span>La date :</span><span class="text-danger ms-2"><%=data.date  %></span>
+                    </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <span>Kilométrage :</span><span class="text-danger ms-2"><%=data.kilo  %></span>
+                    </div>
+                    <div class="d-flex mt-3 jus-e " >
+                        <span>Prochaine vidange :</span><span class="text-danger ms-2"><%=data.next_kilo  %> </span>
+                    </div>
+                    <% if(conn){ %>
+                        <form action="/delete/<%=data.id_car_random  %>" method="post" class="m-3">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>     
+                        <% } %>
+                </div>
+                <div class="d-flex f-d-c align-items-baseline m-3" >
+                    <label for="#" class="label-hd  pe-4 ps-4 p-1 bg-white mb-2"> Code QR :                    </label>
+                    <div class="" style="width: 300px;">
+                        <img src='/qrcodes/<%=data.qr_code%>' class="w-100" alt="">
+                    </div>
+                </div>  
+            </div>
+            
+        </div>
+    </div>
+   <%- include('./parts/fouter.ejs') %>
+</body>
+</html>
+<% }%>

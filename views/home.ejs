@@ -1,0 +1,42 @@
+<%- include('./parts/head.ejs') %>
+<%- include('./parts/navBar.ejs') %>
+<% if(data){ %>
+<body>
+    <section class="py-5">
+        <div class="container px-5">
+            <h1 class="fw-bolder fs-1 mb-4">List de voiture</h1>
+            <form action="/" method="post" class="d-flex">
+                <input type="text" class="form-control" placeholder="Rechercher ..." name="tele">
+                <button class="btn btn-outline-dark ms-1 rounded-5 " type="submit">Rechercher</button>
+            </form>
+            <% data.forEach(car => { %>
+            <div class="card border-0 shadow rounded-3 overflow-hidden mb-2 mt-2">
+                <div class="card-body p-0">
+                    <div class="row gx-0">
+                        <div class="col-lg-6 col-xl-5 py-lg-5">
+                            <div class="p-4 p-md-5">
+                                
+                                <div class="h2 fw-bolder"><%=car.car  %></div>
+                                <p class=" text-primary"><%=car.teleC  %></p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus ab doloremque, qui doloribus ea officiis...</p>
+                                <a class="btn btn-link" href="/details/<%= car.id_car_random%>">
+                                    Details
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" col-xl-7 al-c ">
+                            
+                                <img src='/qrcodes/<%=car.qr_code%>' class="" style="width: 100%; height: auto;" alt="">
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </section>
+</body>
+
+<%- include('./parts/fouter.ejs') %>
+<% } %>
+
+</html>

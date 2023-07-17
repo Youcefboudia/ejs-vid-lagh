@@ -1,0 +1,43 @@
+<%- include('./parts/head.ejs') %>
+<%- include('./parts/navBar.ejs') %>
+<body>
+    
+    <div class="" style="position: relative;">
+        <img src="./Img/sidbanner.png" alt="" class="w-100" style="background-size: cover;">
+        <h1 class="head-txt  text-white  ">Ajoute un Voiture</h1>
+    </div>
+    <div class="p-2  container mb-4" style="background-color: #f2f2f2; ">
+            
+      <p class="fs-1" id="aj"> <u>Ajoute un voiture</u></p>
+    <form class=" p-1 d-flex  flex-wrap jus-e" action="/addCar" method="post">
+      <div class="m-4" style="width:  500px;">
+        <label for="Voiture">Voiture :</label>
+      <input type="text" id="Voiture" name="car" class="form-control rounded-5 mt-3 mb-2" required placeholder="Voiture...">
+      <label for="Matricule">Matricule :</label>
+      <input type="text" id="Matricule" name="matr" class="form-control rounded-5 mt-3 mb-2" required placeholder="Matricule...">
+      <label for="Numéro">Numéro  :</label>
+      <input type="text" id="Numéro " name="tele" class="form-control rounded-5 mt-3 mb-2" required placeholder="Numéro de téléphone du propriétaire...">
+      <label for="Saisie">SAISIE PAR :</label>
+      <input type="text" id="Saisie" name="saisie" class="form-control rounded-5 mt-3 mb-2" required placeholder="Saisie par...">
+      <label for="type">Agent de service :</label>
+      <input type="text" name="agent" id="type" class="form-control rounded-5 mt-3  mb-2" required placeholder="Agent de service..." >
+      </div>
+      <div class="m-4" style="width: 500px;">
+        <label for="type">Service :</label>
+        <input type="text" name="service" id="type" class="form-control rounded-5 mt-3  mb-2" required placeholder="Service..." >
+        <label for="type">Type d'huile :</label>
+        <input type="text" name="oil" id="type" class="form-control rounded-5 mt-3  mb-2" required placeholder="Type d'huile..." >
+        <label for="kilo">Kilométrage :</label>
+        <input type="text" name="kilo" id="kilo" class="form-control rounded-5 mt-3  mb-2" required placeholder="Kilométrage..." >
+        <label for="Prochaine">Prochaine vidange :</label>
+        <input type="text" name="nextKilo" id="type" class="form-control rounded-5 mt-3  mb-2" required placeholder="Prochaine vidange..." >
+        <input type="submit"   class="btn btn-danger btn-lg rounded-3 m-2 " value="Ajoute" >
+      </div>
+      
+        </form>
+</div>
+<%- include('./parts/fouter.ejs') %>
+</body>
+</html>
+
+<h1 class="text-center">Not found</h1>
