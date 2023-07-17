@@ -36,6 +36,9 @@ const path = require("path");
     
     }
         }
+      else{
+            res.render("addCar",{err:true})
+        }
 
     } catch (error) {
         console.log(error);   
