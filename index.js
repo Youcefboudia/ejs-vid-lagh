@@ -8,6 +8,7 @@ const Modifer = require('./Api/modifer');
 const ModiferUser = require('./Api/modiferUser');
 const session = require('express-session');
 const  connect  = require('./Api/Connection');
+require('dotenv').config();
 
 const app = express()
 
@@ -68,4 +69,4 @@ app.post('/addCar', function(req, res) {
   });
 
   app.use('/qrcodes', express.static('qrcodes'));
-app.listen(3000,()=>console.log("http://localhost:3000"))
+app.listen(process.env.PORT,()=>console.log(`http://localhost:${process.env.PORT}`))
