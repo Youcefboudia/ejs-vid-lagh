@@ -6,6 +6,13 @@ function ListVoiture(req,res){
         connect.query('SELECT * FROM cars order by id_car desc',(err,data)=>{
             if(!err)
             {
+                data.forEach(element => {
+                    const imageData = element.img_qrcode;
+                        const base64Image = Buffer.from(imageData).toString('base64');
+                        const imageSrc = `data:image/svg+xml;base64,${base64Image}`;   
+                        element.img_qrcode = imageSrc; 
+                });
+                
                 res.render("home",{data:data});
             }
         })        
@@ -16,7 +23,11 @@ function ListVoiture(req,res){
         (err,data)=>{
             if(!err)
             {
-                res.render("home",{data:data});
+                const imageData = data[0].img_qrcode;
+                        const base64Image = Buffer.from(imageData).toString('base64');
+                        const imageSrc = `data:image/svg+xml;base64,${base64Image}`;
+                        
+                res.render("home",{data:data,imageSrc});
             }
 })
 }

@@ -12,11 +12,14 @@ function Details(id,res,req){
                 connect.query(sql2,(err2,data2)=>{
                     if(!err2)
                     {
-                        console.log(data2);
+                        const imageData = data[0].img_qrcode;
+                        const base64Image = Buffer.from(imageData).toString('base64');
+                        const imageSrc = `data:image/svg+xml;base64,${base64Image}`;
+                        
                         if(req.session.user)
-                        res.render('Cars_details',{ data:data[0],auth:req.session.user,conn:true})
+                        res.render('Cars_details',{ data:data[0],auth:req.session.user,conn:true,imageSrc})
                         else
-                        res.render('Cars_details',{ data:data[0],auth:data2[0],conn:false})
+                        res.render('Cars_details',{ data:data[0],auth:data2[0],conn:false,imageSrc})
                     }else{
                         res.redirect('/');
                     }
