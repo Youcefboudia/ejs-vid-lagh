@@ -12,6 +12,7 @@ function Details(id,res,req){
                 connect.query(sql2,(err2,data2)=>{
                     if(!err2)
                     {
+                        console.log(data2);
                         if(req.session.user)
                         res.render('Cars_details',{ data:data[0],auth:req.session.user,conn:true})
                         else

@@ -11,6 +11,11 @@
       <p class="fs-1" id="aj"> <u>Ajoute un voiture</u></p>
     <form class=" p-1 d-flex  flex-wrap jus-e" action="/addCar" method="post">
       <div class="m-4" style="width:  500px;">
+        <% if(err) {%>
+          <div class="alert alert-danger text-center mt-0 mb-2  " role="alert">
+              Problem verifer le numero ou un chants et vide !
+          </div>
+          <% } %>
         <label for="Voiture">Voiture :</label>
       <input type="text" id="Voiture" name="car" class="form-control rounded-5 mt-3 mb-2" required placeholder="Voiture...">
       <label for="Matricule">Matricule :</label>
@@ -31,7 +36,7 @@
         <input type="text" name="kilo" id="kilo" class="form-control rounded-5 mt-3  mb-2" required placeholder="Kilométrage..." >
         <label for="Prochaine">Prochaine vidange :</label>
         <input type="text" name="nextKilo" id="type" class="form-control rounded-5 mt-3  mb-2" required placeholder="Prochaine vidange..." >
-        <input type="submit"   class="btn btn-danger btn-lg rounded-3 m-2 " value="Ajoute" >
+        <input type="submit"   class="btn btn-dark  rounded-3 m-2 " value="Ajoute" >
       </div>
       
         </form>

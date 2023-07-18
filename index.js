@@ -41,7 +41,7 @@ app.post('/',Auth, function(req, res) {
   });
 
   app.get('/ajouter',Auth,(req,res)=>{
-    res.render('addCar')
+    res.render('addCar',{err:false})
   })
 
 app.get('/login', function(req, res) {
