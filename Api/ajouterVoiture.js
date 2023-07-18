@@ -19,7 +19,7 @@ const path = require("path");
     `
     try {
         
-        const qrCode_Image = await qr.toString(""+id, { type: 'svg' });
+        const qrCode_Image = await qr.toString(req.host+"/details/"+id, { type: 'svg' });
         const imageData = Buffer.from(qrCode_Image);
     const {tele,agent,car,oil,matr,kilo,saisie,service,nextKilo} = req.body;
     if(!isNaN(parseInt(tele)) && agent && car && oil && kilo && service && nextKilo&&saisie)
