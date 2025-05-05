@@ -20,5 +20,6 @@ if(id !==undefined && id!==''){
 }
 }
 
+
 module.exports = qrCode
 
